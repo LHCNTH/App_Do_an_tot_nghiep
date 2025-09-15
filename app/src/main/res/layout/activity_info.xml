@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đây là con lợn nhà tui..."
+        android:textSize="18sp"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00ADB5"
+        android:text="↩ Quay về" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="188dp"
+        android:layout_height="225dp"
+        app:srcCompat="@drawable/z6997498119152_e785c0201d0c98d54bbe7198b4adb9fb" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="281dp"
+        android:layout_height="333dp"
+        app:srcCompat="@drawable/z6997498152105_4dfa8a78da7bd6cfee4eb5fd823c07aa" />
+</LinearLayout>

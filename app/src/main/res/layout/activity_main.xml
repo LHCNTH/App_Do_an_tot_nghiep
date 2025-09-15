@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333C43">
+
+    <!-- LinearLayout giữ nguyên tất cả các nút robot -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái: chưa kết nối"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- Hàng nút robot -->
+        <Button
+            android:id="@+id/btnForward"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="↑ Đi tiến"
+            android:backgroundTint="#00ADB5"
+            android:textColor="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnLeft"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="← Rẽ trái"
+                android:backgroundTint="#00ADB5"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="■ Stop"
+                android:backgroundTint="#FF5722"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"/>
+
+            <Button
+                android:id="@+id/btnRight"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="→ Rẽ phải"
+                android:backgroundTint="#00ADB5"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBackward"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="↓ Đi Lùi"
+            android:backgroundTint="#00ADB5"
+            android:textColor="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btnRotateLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⟲ Xoay tròn trái"
+                android:backgroundTint="#0AE499"
+                android:textColor="#524D4D"
+                android:layout_marginRight="16dp"/>
+
+            <Button
+                android:id="@+id/btnRotateRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⟳ Xoay tròn phải"
+                android:backgroundTint="#0AE499"
+                android:textColor="#524D4D"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Nút Reconnect ở góc trên phải -->
+    <Button
+        android:id="@+id/btnReconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kết nối lại"
+        android:padding="12dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="18dp"
+        android:backgroundTint="#F8E061"
+        android:textColor="#524D4D"/>/>
+
+    <!-- Ảnh ở góc trên bên trái -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="112dp"
+        android:layout_height="96dp"
+        android:layout_gravity="top"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/hvktmm" />
+</FrameLayout>
