@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">RobotController</string>
+    <string name="app_name">Robot Tự Cân Bằng</string>
+
+    <string name="info_kma">
+        • Thành lập: Năm 1976, trực thuộc Ban Cơ yếu Chính phủ.\n
+        • Địa chỉ: 141 Chiến Thắng, xã Tân Triều, huyện Thanh Trì, Hà Nội.\n
+        • Vai trò: Trung tâm đào tạo và nghiên cứu trọng điểm về an toàn thông tin thuộc top đầu cả nước.\n\n
+
+        CHƯƠNG TRÌNH ĐÀO TẠO\n
+        • Đại học: An toàn thông tin, CNTT, Điện tử viễn thông.\n
+        • Sau đại học: Thạc sĩ và Tiến sĩ.\n
+        • Tổng cộng: hơn 40 chương trình đào tạo.\n\n
+
+        ĐIỂM CHUẨN và HỌC PHÍ\n
+        • Điểm chuẩn: 23–26 (tùy ngành, theo từng năm).\n
+        • Học phí: khoảng 500.000 VNĐ/tín chỉ.\n\n
+
+        HOẠT ĐỘNG NỔI BẬT\n
+        • Tham gia dự án quốc gia về bảo mật.\n
+        • Hợp tác quốc tế trong nghiên cứu.\n
+        • Tổ chức các cuộc thi ATTT.\n\n
+
+        ĐỊNH HƯỚNG PHÁT TRIỂN\n
+        • Trở thành đại học thông minh, hiện đại.\n
+        • Cung cấp nhân lực chất lượng cao.\n
+        • Gắn kết đào tạo – nghiên cứu – ứng dụng.
+    </string>
 </resources>

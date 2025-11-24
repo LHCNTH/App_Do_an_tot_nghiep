@@ -1,123 +1,273 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#333C43">
 
-    <!-- LinearLayout giữ nguyên tất cả các nút robot -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
+    <ImageView
+        android:id="@+id/imageFlag"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/vietnam"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-        <TextView
-            android:id="@+id/tvStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Trạng thái: chưa kết nối"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="28dp"/>
+    <!-- Logo KMA -->
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="110dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/hvktmm"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <!-- Hàng nút robot -->
-        <Button
-            android:id="@+id/btnForward"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="↑ Đi tiến"
-            android:backgroundTint="#00ADB5"
-            android:textColor="@android:color/white"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
-
-            <Button
-                android:id="@+id/btnLeft"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="← Rẽ trái"
-                android:backgroundTint="#00ADB5"
-                android:textColor="@android:color/white"/>
-
-            <Button
-                android:id="@+id/btnStop"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="■ Stop"
-                android:backgroundTint="#FF5722"
-                android:textColor="@android:color/white"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"/>
-
-            <Button
-                android:id="@+id/btnRight"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="→ Rẽ phải"
-                android:backgroundTint="#00ADB5"
-                android:textColor="@android:color/white"/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnBackward"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="↓ Đi Lùi"
-            android:backgroundTint="#00ADB5"
-            android:textColor="@android:color/white"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="20dp">
-
-            <Button
-                android:id="@+id/btnRotateLeft"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="⟲ Xoay tròn trái"
-                android:backgroundTint="#0AE499"
-                android:textColor="#524D4D"
-                android:layout_marginRight="16dp"/>
-
-            <Button
-                android:id="@+id/btnRotateRight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="⟳ Xoay tròn phải"
-                android:backgroundTint="#0AE499"
-                android:textColor="#524D4D"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Nút Reconnect ở góc trên phải -->
+    <!-- Nút Reconnect -->
     <Button
         android:id="@+id/btnReconnect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kết nối lại"
         android:padding="12dp"
-        android:layout_gravity="top|end"
-        android:layout_margin="18dp"
         android:backgroundTint="#F8E061"
-        android:textColor="#524D4D"/>/>
+        android:textColor="#524D4D"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
 
-    <!-- Ảnh ở góc trên bên trái -->
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="112dp"
-        android:layout_height="96dp"
-        android:layout_gravity="top"
-        android:layout_margin="20dp"
-        app:srcCompat="@drawable/hvktmm" />
-</FrameLayout>
+    <!-- ScrollView chính -->
+    <ScrollView
+        android:id="@+id/scrollMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <!-- Trạng thái -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái: chưa kết nối"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Nút di chuyển -->
+            <Button
+                android:id="@+id/btnForward"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="↑ Đi tiến"
+                android:backgroundTint="#00ADB5"
+                android:textColor="@android:color/white"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginVertical="12dp">
+
+                <Button
+                    android:id="@+id/btnLeft"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="← Rẽ trái"
+                    android:backgroundTint="#00ADB5"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:text="■ Stop"
+                    android:backgroundTint="#F0592B"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnRight"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="→ Rẽ phải"
+                    android:backgroundTint="#00ADB5"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnBackward"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="↓ Đi Lùi"
+                android:backgroundTint="#00ADB5"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnRotateLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="⟲ Xoay trái"
+                    android:backgroundTint="#0AE499"
+                    android:textColor="#524D4D"/>
+
+                <Button
+                    android:id="@+id/btnRotateRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⟳ Xoay phải"
+                    android:backgroundTint="#0AE499"
+                    android:textColor="#524D4D"/>
+            </LinearLayout>
+
+            <!-- Nhập PID -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/etKp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Kp"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"/>
+
+                <EditText
+                    android:id="@+id/etKi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:hint="Ki"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"/>
+
+                <EditText
+                    android:id="@+id/etKd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:hint="Kd"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"/>
+
+                <Button
+                    android:id="@+id/btnSendPID"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Gửi PID"
+                    android:backgroundTint="#FFC107"
+                    android:textColor="#524D4D"/>
+            </LinearLayout>
+
+            <!-- Nhập quãng đường -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/etDistance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Quãng đường (mm)"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:background="#FFFFFF"
+                    android:textColor="#000000"/>
+
+                <Button
+                    android:id="@+id/btnSendDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Gửi"
+                    android:backgroundTint="#FFC107"
+                    android:textColor="#524D4D"/>
+            </LinearLayout>
+
+            <!-- Nút chọn tốc độ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnSpeed1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="Đi chậm"
+                    android:backgroundTint="#9C27B0"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnSpeed2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="Đi vừa"
+                    android:backgroundTint="#9C27B0"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnSpeed3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đi nhanh"
+                    android:backgroundTint="#9C27B0"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <!-- Trạng thái tốc độ -->
+            <TextView
+                android:id="@+id/tvSpeedStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TỐC ĐỘ VỪA"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

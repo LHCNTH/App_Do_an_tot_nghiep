@@ -1,37 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:background="#333C43">
 
-    <TextView
-        android:id="@+id/tvInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đây là con lợn nhà tui..."
-        android:textSize="18sp"
-        android:padding="10dp" />
-
+    <!-- Nút Back -->
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="113dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#00ADB5"
-        android:text="↩ Quay về" />
+        android:text="← Quay lại"
+        android:backgroundTint="#F8E061"
+        android:textColor="#524D4D"
+        android:layout_margin="12dp"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="188dp"
-        android:layout_height="225dp"
-        app:srcCompat="@drawable/z6997498119152_e785c0201d0c98d54bbe7198b4adb9fb" />
+    <!-- ScrollView chứa toàn bộ nội dung -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="281dp"
-        android:layout_height="333dp"
-        app:srcCompat="@drawable/z6997498152105_4dfa8a78da7bd6cfee4eb5fd823c07aa" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+        <!-- Logo -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/hvktmm"
+                android:contentDescription="Logo KMA"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Học viện Kỹ thuật Mật mã (KMA)"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"/>
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info_kma"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:lineSpacingExtra="6dp"
+                android:gravity="start"/>
+
+            <WebView
+                android:id="@+id/webViewVideo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
